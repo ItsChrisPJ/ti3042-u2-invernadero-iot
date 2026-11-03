@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dispositivo 1: Nodo Invernadero"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simulador Sensor DHT11 + Actuador Ventilador"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@color/greenhouse_primary" />
+        </LinearLayout>
+
+        <!-- TARJETA 1: SERVIDOR INALÁMBRICO (SOCKETS TCP) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/greenhouse_primary"
+            app:strokeWidth="1.5dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📡 Servidor Inalámbrico Local"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvServerStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado: Iniciando servidor..."
+                    android:textSize="13sp"
+                    android:textColor="@color/status_connected"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/greenhouse_primary_light"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IP del Nodo:"
+                        android:textStyle="bold"
+                        android:textColor="@color/greenhouse_primary_dark"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvServerIpAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="192.168.1.100:8080"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingresa esta IP en el Dispositivo 2 (Panel Agricultor) para conectar."
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/btnToggleServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reiniciar Servidor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/greenhouse_primary"
+                    app:strokeColor="@color/greenhouse_primary" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 2: SIMULADOR DE SENSOR DHT11 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌡️ Sensor DHT11 en el Invernadero"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Display Temperatura y Humedad -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Caja Temperatura -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/screen_bg"
+                        android:padding="12dp"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvNodeTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="24.5 °C"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/temp_optimal" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp">
+
+                            <Button
+                                android:id="@+id/btnTempMinus"
+                                android:layout_width="44dp"
+                                android:layout_height="40dp"
+                                android:text="-"
+                                android:padding="0dp"
+                                android:layout_marginEnd="4dp" />
+
+                            <Button
+                                android:id="@+id/btnTempPlus"
+                                android:layout_width="44dp"
+                                android:layout_height="40dp"
+                                android:text="+"
+                                android:padding="0dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Caja Humedad -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/screen_bg"
+                        android:padding="12dp"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Humedad Relativa"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvNodeHumidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="62.0 %"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/temp_cold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp">
+
+                            <Button
+                                android:id="@+id/btnHumMinus"
+                                android:layout_width="44dp"
+                                android:layout_height="40dp"
+                                android:text="-"
+                                android:padding="0dp"
+                                android:layout_marginEnd="4dp" />
+
+                            <Button
+                                android:id="@+id/btnHumPlus"
+                                android:layout_width="44dp"
+                                android:layout_height="40dp"
+                                android:text="+"
+                                android:padding="0dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Botones de Escenarios Rápidos -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimulateHeatAlert"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔥 Alerta Calor (32°C)"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textColor="@color/temp_hot"
+                        android:textSize="11sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimulateOptimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🌱 Clima Óptimo (22°C)"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textColor="@color/temp_optimal"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 3: ACTUADOR (VENTILADOR) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💨 Actuador: Ventilador de Enfriamiento"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Estado del Ventilador -->
+                <TextView
+                    android:id="@+id/tvNodeFanStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VENTILADOR: APAGADO"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@color/fan_inactive"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvNodeMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modo: AUTOMÁTICO (Activa ventilador si T > 28°C)"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 4: CONSOLA DE COMANDOS EN TIEMPO REAL -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/black"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consola de Red IoT (Comandos Recibidos)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvNodeConsole"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:text="> Esperando conexión del Agricultor..."
+                    android:textColor="#A5D6A7"
+                    android:fontFamily="monospace"
+                    android:textSize="11sp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

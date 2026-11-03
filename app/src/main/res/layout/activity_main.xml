@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Barra Superior / Header de Sesión -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvWelcomeUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola, Agricultor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark" />
+
+                <TextView
+                    android:id="@+id/tvUserRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rol: Operador de Invernadero"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salir"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@color/temp_hot" />
+        </LinearLayout>
+
+        <!-- SECCIÓN 1: INTERCONEXIÓN ENTRE 2 DISPOSITIVOS ANDROID (CRITERIO 2.1.4) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📡 INTERCONEXIÓN IOT (2 DISPOSITIVOS)"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenhouse_primary_dark"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/greenhouse_primary"
+            app:strokeWidth="1.5dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selecciona el rol de este teléfono para la demo:"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Botón Dispositivo 1: Nodo Invernadero -->
+                <Button
+                    android:id="@+id/btnOpenGreenhouseNode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🌿 DISPOSITIVO 1: NODO INVERNADERO"
+                    android:backgroundTint="@color/greenhouse_primary"
+                    android:textColor="@color/white"
+                    android:paddingVertical="12dp"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Botón Dispositivo 2: Panel Agricultor -->
+                <Button
+                    android:id="@+id/btnOpenGreenhouseMonitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📱 DISPOSITIVO 2: PANEL AGRICULTOR"
+                    android:backgroundTint="@color/temp_cold"
+                    android:textColor="@color/white"
+                    android:paddingVertical="12dp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tip: Puedes abrir el Dispositivo 1 en un teléfono y el Dispositivo 2 en otro teléfono dentro de la misma red Wi-Fi o Hotspot, o usar 127.0.0.1 en un solo equipo."
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- SECCIÓN 2: ESTADO INALÁMBRICO Y PERMISOS (CLASE 03) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📶 ESTADO INALÁMBRICO Y PERMISOS"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenhouse_primary_dark"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Info Wi-Fi -->
+                <TextView
+                    android:id="@+id/tvWifiStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wi-Fi: Verificando..."
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- IP Local -->
+                <TextView
+                    android:id="@+id/tvLocalIp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IP Local: Consultando..."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Botón Solicitar Permisos en Contexto (ISO 27400) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSolicitarPermiso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Solicitar Permisos Inalámbricos"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/greenhouse_primary"
+                    app:strokeColor="@color/greenhouse_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Botones originales de la clase -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNombreWifi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Refrescar Wi-Fi"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="4dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnListarBluetooth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ver Bluetooth"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- SECCIÓN 3: ALMACENAMIENTO SQLITE (CRITERIO 2.1.2) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💾 ALMACENAMIENTO LOCAL SQLITE"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenhouse_primary_dark"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consulta las lecturas de telemetría guardadas históricamente en la base de datos local del dispositivo."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnOpenHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📊 VER HISTORIAL DE MEDICIONES SQLITE"
+                    android:backgroundTint="@color/greenhouse_primary_dark"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- SECCIÓN 4: PASO DE DATOS ENTRE ACTIVITIES (CLASE 02) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔁 PRUEBA DE INTENTS (CLASE 02)"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/greenhouse_primary_dark"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/inputTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Escribe un mensaje o ID para DetalleActivity"
+                    android:inputType="text"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:id="@+id/btnEnviar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enviar a DetalleActivity"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    app:strokeColor="@color/greenhouse_primary_dark" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

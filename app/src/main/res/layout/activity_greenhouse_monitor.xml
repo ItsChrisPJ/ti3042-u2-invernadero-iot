@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dispositivo 2: Panel Agricultor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monitoreo y Control Remoto Inalámbrico"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@color/greenhouse_primary" />
+        </LinearLayout>
+
+        <!-- TARJETA 1: CONEXIÓN INALÁMBRICA AL NODO -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/temp_cold"
+            app:strokeWidth="1.5dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔌 Conexión Inalámbrica al Invernadero"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/temp_cold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Input IP del Servidor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilIpAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="IP del Nodo (Dispositivo 1)"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etIpAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="192.168.1.100"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnUseLoopback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="127.0.0.1"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textSize="11sp"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+
+                <!-- Botón Conectar/Desconectar -->
+                <Button
+                    android:id="@+id/btnToggleConnection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conectar al Invernadero"
+                    android:backgroundTint="@color/temp_cold"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Estado de Conexión -->
+                <TextView
+                    android:id="@+id/tvConnectionStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado: Desconectado"
+                    android:textSize="12sp"
+                    android:textColor="@color/status_disconnected"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 2: TELEMETRÍA EN TIEMPO REAL (DHT11) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Telemetría en Tiempo Real"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Banner de Alerta (Oculto por defecto o visible cuando T > 28°C) -->
+                <TextView
+                    android:id="@+id/tvAlertBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ ¡ALERTA DE TEMPERATURA CRÍTICA (> 28°C)!"
+                    android:textColor="@color/white"
+                    android:background="@color/temp_hot"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:paddingVertical="6dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Valores de Sensores -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/screen_bg"
+                        android:padding="12dp"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvMonitorTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--.- °C"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/temp_optimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/screen_bg"
+                        android:padding="12dp"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Humedad"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvMonitorHumidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--.- %"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/temp_cold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Estado del Ventilador Remoto -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ventilador Invernadero:"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvMonitorFanStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DESCONOCIDO"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="@color/fan_inactive" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvLastUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Última actualización: Sin datos"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 3: CONTROL REMOTO DE ACTUADORES -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎛️ Control Remoto del Invernadero"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Botones de Acción Inalámbrica -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <Button
+                        android:id="@+id/btnTurnFanOn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="💨 Encender"
+                        android:backgroundTint="@color/greenhouse_primary"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:id="@+id/btnTurnFanOff"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🛑 Apagar"
+                        android:backgroundTint="@color/temp_hot"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnToggleAutoMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alternar Modo Auto / Manual"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    app:strokeColor="@color/greenhouse_primary_dark" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 4: ALMACENAMIENTO SQLITE (CRITERIO 2.1.2) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💾 Almacenamiento Local SQLite"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/greenhouse_primary_dark"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:id="@+id/btnSaveReadingSqlite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📥 Guardar Lectura Actual en SQLite"
+                    android:backgroundTint="@color/greenhouse_primary_dark"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGoHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ver Historial Completo"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/greenhouse_primary" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
