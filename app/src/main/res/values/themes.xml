@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.InvernaderoIoT" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/greenhouse_primary</item>
+        <item name="colorPrimaryVariant">@color/greenhouse_primary_dark</item>
+        <item name="colorSecondary">@color/greenhouse_accent</item>
+        <item name="android:statusBarColor">@color/greenhouse_primary_dark</item>
+    </style>
+
+    <style name="Theme.InvernaderoIoT" parent="Base.Theme.InvernaderoIoT" />
+    <!-- Alias de retrocompatibilidad -->
+    <style name="Theme.NavegacionPermisos" parent="Theme.InvernaderoIoT" />
+</resources>

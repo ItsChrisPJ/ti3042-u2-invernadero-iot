@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Invernadero IoT</string>
+    <string name="app_subtitle">Monitoreo y Control Inalámbrico</string>
+
+    <!-- Login y Registro -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="login_subtitle">Sistema de Control Invernadero IoT (ISO 27400)</string>
+    <string name="hint_username">Nombre de Usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">Ingresar al Sistema</string>
+    <string name="btn_demo_login">Cargar Credenciales Demo (admin)</string>
+    <string name="btn_go_register">¿No tienes cuenta? Regístrate aquí</string>
+
+    <string name="register_title">Registro de Operador</string>
+    <string name="hint_full_name">Nombre Completo</string>
+    <string name="hint_confirm_password">Confirmar Contraseña</string>
+    <string name="btn_register">Crear Cuenta</string>
+    <string name="btn_back_to_login">Volver al Login</string>
+
+    <!-- Dashboard Principal -->
+    <string name="dashboard_title">Panel Invernadero IoT</string>
+    <string name="section_connectivity">Conectividad Inalámbrica</string>
+    <string name="btn_request_permission">Gestionar Permisos Inalámbricos</string>
+    <string name="btn_list_bluetooth">Ver Dispositivos Bluetooth</string>
+    <string name="btn_wifi_info">Actualizar Estado Wi-Fi</string>
+
+    <string name="section_roles">Interconexión entre Dispositivos</string>
+    <string name="btn_open_node">Dispositivo 1: Nodo Invernadero (Servidor)</string>
+    <string name="btn_open_monitor">Dispositivo 2: Panel Agricultor (Monitor)</string>
+    <string name="btn_open_history">Historial de Mediciones SQLite</string>
+    <string name="btn_open_detail_test">Probar Paso de Datos (Intent)</string>
+    <string name="btn_logout">Cerrar Sesión</string>
+
+    <!-- Nodo Invernadero -->
+    <string name="node_title">Nodo Invernadero (Simulador DHT11)</string>
+    <string name="monitor_title">Panel del Agricultor (Control Remoto)</string>
+    <string name="history_title">Historial SQLite de Mediciones</string>
+</resources>
