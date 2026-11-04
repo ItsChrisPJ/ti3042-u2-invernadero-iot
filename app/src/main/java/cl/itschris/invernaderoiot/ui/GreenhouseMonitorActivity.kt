@@ -15,6 +15,7 @@ import cl.itschris.invernaderoiot.data.DatabaseHelper
 import cl.itschris.invernaderoiot.data.models.GreenhouseTelemetry
 import cl.itschris.invernaderoiot.data.models.SensorReading
 import cl.itschris.invernaderoiot.databinding.ActivityGreenhouseMonitorBinding
+import cl.itschris.invernaderoiot.network.GreenhouseServerManager
 import cl.itschris.invernaderoiot.network.GreenhouseSocketClient
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -78,6 +79,7 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
                         binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.status_connected))
                         binding.btnToggleConnection.text = "Desconectar del Invernadero"
                         binding.btnToggleConnection.setBackgroundColor(ContextCompat.getColor(this, R.color.temp_hot))
+                        Toast.makeText(this, "¡Conectado exitosamente!", Toast.LENGTH_SHORT).show()
                     } else {
                         binding.tvConnectionStatus.text = "Estado: $msg"
                         binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.status_disconnected))
@@ -150,6 +152,12 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
                 } else {
                     binding.tilIpAddress.error = null
                 }
+
+                // Autoinicio de servidor en loopback si está probando en el mismo equipo
+                if ((ip == "127.0.0.1" || ip == "localhost") && !GreenhouseServerManager.isServerRunning()) {
+                    GreenhouseServerManager.startServer(8080)
+                }
+
                 socketClient?.connect(ip, 8080)
             }
         }
