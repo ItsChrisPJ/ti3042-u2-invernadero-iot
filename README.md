@@ -163,3 +163,20 @@ Todas las pantallas implementan trazabilidad en el ciclo de vida Android, permit
 - `CicloVida_Monitor`: eventos en GreenhouseMonitorActivity.
 - `CicloVida_Historial`: eventos en HistorialActivity.
 - `CicloVida_Detalle`: eventos en DetalleActivity.
+
+---
+
+## 9. Dirección de Arte y Sistema de Diseño: Temática Hollow Knight (Hallownest)
+
+La interfaz móvil fue diseñada siguiendo la atmósfera, el lenguaje visual y el sistema de diseño del reino subterráneo de **Hollow Knight** (Team Cherry), integrando una arquitectura entomológica gótica de alta fidelidad:
+
+| Elemento / Token | Implementación | Inspiración en Hallownest |
+| :--- | :--- | :--- |
+| **El Vacío (Void Black `#07080C`)** | Fondo base con viñeteado ambiental oscuro (`bg_void_vignette`). | El Vacío abisal y las profundidades de Hallownest. |
+| **Alma Pura (Pure Soul `#F4F6F9`)** | Tipografía serif en mayúsculas (`letter-spacing: 0.15em`) para títulos y botones. | La energía de Alma que emana de las Vasijas. |
+| **Mineral Pálido (`#6E7891`) y Piedra (`#3A4154`)** | Marcos de doble línea (*double-etched borders*) en contenedores y divisores ornamentales. | La forja del aguijón y la arquitectura tallada de Ciudad de Lágrimas. |
+| **Savia Azul / Lifeblood (`#00B4D8` / `#72EFDD`)** | Valores de humedad relativa, enlaces y métricas de conexión. | La Savia Azul de las crisálidas de vida. |
+| **La Infección / Radiance (`#FF7B00` / `#FFB703`)** | Banners y badges de alerta crítica cuando $T > 28^\circ\text{C}$. | El resplandor ardiente de la Infección. |
+| **Sendero Verde / Greenpath (`#52B788`)** | Clima óptimo de cultivo, estados activos y confirmaciones. | La flora vibrante del Sendero Verde de Unn. |
+| **Diario del Cazador** | Listado de telemetría SQLite en tarjetas de piedra con muescas de amuleto (`ic_charm_notch`). | Tablillas y registros de criaturas del Diario. |
+
