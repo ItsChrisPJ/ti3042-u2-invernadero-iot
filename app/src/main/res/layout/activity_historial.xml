@@ -5,11 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_bg"
+    android:background="@drawable/bg_void_vignette"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Encabezado -->
+    <!-- Encabezado Estilo Hallownest -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,174 +27,202 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Historial de Mediciones"
-                android:textSize="20sp"
+                android:text="DIARIO DE MEDICIONES"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/greenhouse_primary_dark" />
+                android:fontFamily="serif"
+                android:letterSpacing="0.14"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_soul" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Persistencia Local en SQLite (Sin Internet)"
-                android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
+                android:text="PERSISTENCIA LOCAL EN ROCA SQLITE (OFFLINE)"
+                android:textSize="10sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.08"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_mask"
+                android:textStyle="italic" />
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Volver"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:textColor="@color/greenhouse_primary" />
+            android:layout_height="36dp"
+            android:text="VOLVER"
+            android:fontFamily="serif"
+            android:letterSpacing="0.10"
+            android:textColor="@color/hk_text_mask"
+            android:textSize="11sp"
+            android:background="@drawable/bg_secondary_button"
+            android:paddingHorizontal="14dp" />
     </LinearLayout>
 
-    <!-- Tarjeta de Estadísticas Resumen -->
-    <com.google.android.material.card.MaterialCardView
+    <!-- Divisor Ornamental Hallownest -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/ic_hallownest_divider"
+        android:contentDescription="Divisor" />
+
+    <!-- Tarjeta de Estadísticas Resumen (Diario del Cazador) -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="2dp"
-        app:cardBackgroundColor="@color/card_bg"
-        app:strokeColor="@color/card_border"
-        app:strokeWidth="1dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_hallownest_card"
+        android:padding="14dp"
+        android:gravity="center"
         android:layout_marginBottom="12dp">
 
+        <!-- Total de Registros -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
             android:gravity="center">
 
-            <!-- Total -->
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tvTotalReadings"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_accent_geo_glow" />
 
-                <TextView
-                    android:id="@+id/tvTotalReadings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Registros"
-                    android:textSize="11sp"
-                    android:textColor="@color/text_secondary" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="32dp"
-                android:background="@color/card_border" />
-
-            <!-- Prom Temp -->
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tvAvgTemp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--.- °C"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/temp_optimal" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp. Prom."
-                    android:textSize="11sp"
-                    android:textColor="@color/text_secondary" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="32dp"
-                android:background="@color/card_border" />
-
-            <!-- Prom Hum -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tvAvgHum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--.- %"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/temp_cold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hum. Prom."
-                    android:textSize="11sp"
-                    android:textColor="@color/text_secondary" />
-            </LinearLayout>
+                android:text="INSCRIPCIONES"
+                android:textSize="9sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.08"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="32dp"
+            android:background="@color/hk_border_pale_ore" />
+
+        <!-- Promedio Temperatura -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvAvgTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--.- °C"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_accent_greenpath" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEMP. MEDIA"
+                android:textSize="9sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.08"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="32dp"
+            android:background="@color/hk_border_pale_ore" />
+
+        <!-- Promedio Humedad -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvAvgHum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--.- %"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_accent_lifeblood_glow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HUM. MEDIA"
+                android:textSize="9sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.08"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask" />
+        </LinearLayout>
+    </LinearLayout>
 
     <!-- Botones de Acción de BD -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="12dp">
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPreloadSample"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_weight="1"
-            android:text="+ Cargar Demo"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:textColor="@color/greenhouse_primary"
-            app:strokeColor="@color/greenhouse_primary"
-            android:textSize="11sp"
+            android:text="+ CARGAR DEMO"
+            android:fontFamily="serif"
+            android:letterSpacing="0.08"
+            android:textColor="@color/hk_text_soul"
+            android:textSize="10sp"
+            android:background="@drawable/bg_secondary_button"
             android:layout_marginEnd="4dp" />
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClearHistory"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_weight="1"
-            android:text="Limpiar BD"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:textColor="@color/temp_hot"
-            android:textSize="11sp"
+            android:text="PURGAR DIARIO"
+            android:fontFamily="serif"
+            android:letterSpacing="0.08"
+            android:textColor="@color/hk_accent_grimm"
+            android:textSize="10sp"
+            android:background="@drawable/bg_secondary_button"
             android:layout_marginStart="4dp" />
     </LinearLayout>
 
-    <!-- Mensaje vacío -->
+    <!-- Mensaje de Estado Vacío (Tablilla de Historia en reposo) -->
     <TextView
         android:id="@+id/tvEmptyState"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No hay mediciones registradas en SQLite.\nGuarda telemetría desde el Panel del Agricultor o presiona '+ Cargar Demo'."
+        android:text="El diario de roca yace en silencio. No se han grabado lecturas aún en SQLite.\nGraba telemetría desde el Panel del Agricultor o presiona '+ Cargar Demo'."
         android:textAlignment="center"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:lineSpacingExtra="3dp"
         android:padding="24dp"
-        android:textSize="13sp"
-        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:textColor="@color/hk_text_lore"
         android:visibility="gone" />
 
     <!-- RecyclerView de Mediciones -->

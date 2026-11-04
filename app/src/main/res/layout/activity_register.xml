@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_bg"
+    android:background="@drawable/bg_void_vignette"
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,144 +15,193 @@
         android:padding="24dp"
         android:gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_title"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
+        <!-- Emblema Superior: Máscara de Vasija -->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
+            android:src="@drawable/ic_vessel_mask"
+            android:contentDescription="Máscara de Vasija" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crea un perfil para acceder al monitoreo del invernadero"
-            android:textSize="13sp"
-            android:textColor="@color/text_secondary"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginTop="10dp"
+            android:text="INSCRIPCIÓN DE VIAJERO"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:letterSpacing="0.18"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul" />
 
-        <com.google.android.material.card.MaterialCardView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="REGISTRO DE OPERADOR EN EL DIARIO DE HALLOWNEST"
+            android:textSize="11sp"
+            android:fontFamily="serif"
+            android:letterSpacing="0.10"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_mask"
+            android:textStyle="italic" />
+
+        <!-- Divisor Ornamental Hallownest -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_hallownest_divider"
+            android:contentDescription="Divisor de Hallownest" />
+
+        <!-- Tablilla de Registro (Marco Doble Línea) -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/card_border"
-            app:strokeWidth="1dp"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp">
 
-            <LinearLayout
+            <!-- Nombre Completo -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:hint="@string/hint_full_name"
+                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:hintTextColor="@color/hk_text_mask"
+                android:textColorHint="@color/hk_border_pale_ore"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
-                <!-- Nombre Completo -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilFullName"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_full_name"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:textColor="@color/hk_text_soul"
+                    android:fontFamily="serif"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etFullName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <!-- Usuario -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_username"
+                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:hintTextColor="@color/hk_text_mask"
+                android:textColorHint="@color/hk_border_pale_ore"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
-                <!-- Usuario -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilUsername"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_username"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:textColor="@color/hk_text_soul"
+                    android:fontFamily="serif"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etUsername"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <!-- Rol -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MUESCA DE ROL EN EL INVERNADERO:"
+                android:textSize="11sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask"
+                android:layout_marginBottom="4dp" />
 
-                <!-- Rol -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rol del Usuario:"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="4dp" />
+            <Spinner
+                android:id="@+id/spnRole"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_charm_well"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="12dp" />
 
-                <Spinner
-                    android:id="@+id/spnRole"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@android:drawable/btn_dropdown"
-                    android:layout_marginBottom="12dp" />
+            <!-- Contraseña -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/hk_text_mask"
+                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:hintTextColor="@color/hk_text_mask"
+                android:textColorHint="@color/hk_border_pale_ore"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
-                <!-- Contraseña -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_password"
-                    app:passwordToggleEnabled="true"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!-- Confirmar Contraseña -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilConfirmPassword"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_confirm_password"
-                    app:passwordToggleEnabled="true"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="20dp">
+                    android:textColor="@color/hk_text_soul"
+                    android:fontFamily="serif"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etConfirmPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword" />
-                </com.google.android.material.textfield.TextInputLayout>
+            <!-- Confirmar Contraseña -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_confirm_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/hk_text_mask"
+                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:hintTextColor="@color/hk_text_mask"
+                android:textColorHint="@color/hk_border_pale_ore"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="20dp">
 
-                <!-- Botón Registrar -->
-                <Button
-                    android:id="@+id/btnRegister"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_register"
-                    android:backgroundTint="@color/greenhouse_primary"
-                    android:textColor="@color/white"
-                    android:paddingVertical="12dp"
-                    android:layout_marginBottom="12dp" />
+                    android:textColor="@color/hk_text_soul"
+                    android:fontFamily="serif"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Botón Volver -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnBackToLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_back_to_login"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:textColor="@color/greenhouse_primary_dark" />
+            <!-- Botón Registrar: Soul Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="FORJAR VÍNCULO • REGISTRAR"
+                android:fontFamily="serif"
+                android:letterSpacing="0.15"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_soul"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_soul_button"
+                android:layout_marginBottom="12dp" />
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            <!-- Botón Volver -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBackToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="‹ REGRESAR AL BANCO DE DESCANSO"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_mask"
+                android:textSize="12sp"
+                android:background="@drawable/bg_secondary_button" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

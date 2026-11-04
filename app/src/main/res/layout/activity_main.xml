@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_bg"
+    android:background="@drawable/bg_void_vignette"
     android:fillViewport="true">
 
     <LinearLayout
@@ -14,14 +14,24 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Barra Superior / Header de Sesión -->
+        <!-- Top HUD Bar: Inspirada en el HUD de Vasija y Máscaras -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="14dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp">
+
+            <!-- Avatar: Vasija en hueco de piedra -->
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_vessel_mask"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="HUD Máscara Vasija" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -33,273 +43,319 @@
                     android:id="@+id/tvWelcomeUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hola, Agricultor"
-                    android:textSize="20sp"
+                    android:text="HOLA, AGRICULTOR"
+                    android:textSize="15sp"
                     android:textStyle="bold"
-                    android:textColor="@color/greenhouse_primary_dark" />
+                    android:fontFamily="serif"
+                    android:letterSpacing="0.12"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hk_text_soul" />
 
                 <TextView
                     android:id="@+id/tvUserRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rol: Operador de Invernadero"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary" />
+                    android:text="MUESCA: OPERADOR DE INVERNADERO"
+                    android:textSize="11sp"
+                    android:fontFamily="serif"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/hk_text_mask"
+                    android:textStyle="italic" />
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLogout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Salir"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:textColor="@color/temp_hot" />
+                android:layout_height="36dp"
+                android:text="SALIR"
+                android:fontFamily="serif"
+                android:letterSpacing="0.10"
+                android:textColor="@color/hk_accent_grimm"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_secondary_button"
+                android:paddingHorizontal="12dp" />
         </LinearLayout>
 
-        <!-- SECCIÓN 1: INTERCONEXIÓN ENTRE 2 DISPOSITIVOS ANDROID (CRITERIO 2.1.4) -->
+        <!-- Divisor Ornamental Hallownest -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_hallownest_divider"
+            android:contentDescription="Divisor" />
+
+        <!-- SECCIÓN 1: INTERCONEXIÓN ENTRE 2 DISPOSITIVOS (CRITERIO 2.1.4) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="📡 INTERCONEXIÓN IOT (2 DISPOSITIVOS)"
-            android:textSize="13sp"
+            android:text="◈ INTERCONEXIÓN DE ALMAS IOT (2 DISPOSITIVOS)"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
+            android:fontFamily="serif"
+            android:letterSpacing="0.14"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
             android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/greenhouse_primary"
-            app:strokeWidth="1.5dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="16dp"
             android:layout_marginBottom="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:text="Selecciona la muesca de rol para este artefacto en la prueba:"
+                android:textSize="11sp"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_text_lore"
+                android:textStyle="italic"
+                android:layout_marginBottom="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selecciona el rol de este teléfono para la demo:"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="12dp" />
+            <!-- Botón Dispositivo 1: Nodo Invernadero -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpenGreenhouseNode"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="🌿 DISPOSITIVO 1: NODO INVERNADERO"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_soul"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_soul_button"
+                android:layout_marginBottom="10dp" />
 
-                <!-- Botón Dispositivo 1: Nodo Invernadero -->
-                <Button
-                    android:id="@+id/btnOpenGreenhouseNode"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="🌿 DISPOSITIVO 1: NODO INVERNADERO"
-                    android:backgroundTint="@color/greenhouse_primary"
-                    android:textColor="@color/white"
-                    android:paddingVertical="12dp"
-                    android:layout_marginBottom="10dp" />
+            <!-- Botón Dispositivo 2: Panel Agricultor -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpenGreenhouseMonitor"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="✦ DISPOSITIVO 2: PANEL AGRICULTOR"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_accent_lifeblood_glow"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_soul_button"
+                android:layout_marginBottom="10dp" />
 
-                <!-- Botón Dispositivo 2: Panel Agricultor -->
-                <Button
-                    android:id="@+id/btnOpenGreenhouseMonitor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="📱 DISPOSITIVO 2: PANEL AGRICULTOR"
-                    android:backgroundTint="@color/temp_cold"
-                    android:textColor="@color/white"
-                    android:paddingVertical="12dp"
-                    android:layout_marginBottom="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aviso: Ejecuta el Disp 1 en un artefacto y el Disp 2 en otro dentro de la misma red Wi-Fi, o sintoniza en bucle local (127.0.0.1) en un solo artefacto."
+                android:textSize="10sp"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_text_lore"
+                android:textStyle="italic" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tip: Puedes abrir el Dispositivo 1 en un teléfono y el Dispositivo 2 en otro teléfono dentro de la misma red Wi-Fi o Hotspot, o usar 127.0.0.1 en un solo equipo."
-                    android:textSize="11sp"
-                    android:textColor="@color/text_secondary" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
         <!-- SECCIÓN 2: ESTADO INALÁMBRICO Y PERMISOS (CLASE 03) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="📶 ESTADO INALÁMBRICO Y PERMISOS"
-            android:textSize="13sp"
+            android:text="◈ SINTONIZACIÓN INALÁMBRICA Y PERMISOS"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
+            android:fontFamily="serif"
+            android:letterSpacing="0.14"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
             android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/card_border"
-            app:strokeWidth="1dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="16dp"
             android:layout_marginBottom="16dp">
 
+            <!-- Pozo de datos de red -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:background="@drawable/bg_charm_well"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp">
 
-                <!-- Info Wi-Fi -->
                 <TextView
                     android:id="@+id/tvWifiStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wi-Fi: Verificando..."
-                    android:textSize="14sp"
+                    android:text="Wi-Fi: Sintonizando frecuencia..."
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"
+                    android:fontFamily="serif"
+                    android:textColor="@color/hk_text_soul"
                     android:layout_marginBottom="4dp" />
 
-                <!-- IP Local -->
                 <TextView
                     android:id="@+id/tvLocalIp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="IP Local: Consultando..."
-                    android:textSize="13sp"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Botón Solicitar Permisos en Contexto (ISO 27400) -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSolicitarPermiso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Solicitar Permisos Inalámbricos"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/greenhouse_primary"
-                    app:strokeColor="@color/greenhouse_primary"
-                    android:layout_marginBottom="8dp" />
-
-                <!-- Botones originales de la clase -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNombreWifi"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Refrescar Wi-Fi"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:textSize="12sp"
-                        android:layout_marginEnd="4dp" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnListarBluetooth"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Ver Bluetooth"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:textSize="12sp"
-                        android:layout_marginStart="4dp" />
-                </LinearLayout>
-
+                    android:text="IP Local: En reposo..."
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/hk_accent_lifeblood_glow" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón Solicitar Permisos -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSolicitarPermiso"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="CONCEDER PERMISOS INALÁMBRICOS"
+                android:fontFamily="serif"
+                android:letterSpacing="0.10"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_mask"
+                android:textSize="11sp"
+                android:background="@drawable/bg_secondary_button"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Botones de consulta Wi-Fi y Bluetooth -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNombreWifi"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:text="REFRESCAR WI-FI"
+                    android:fontFamily="serif"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/hk_text_mask"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_secondary_button"
+                    android:layout_marginEnd="4dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnListarBluetooth"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:text="VER BLUETOOTH"
+                    android:fontFamily="serif"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/hk_text_mask"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_secondary_button"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
         <!-- SECCIÓN 3: ALMACENAMIENTO SQLITE (CRITERIO 2.1.2) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="💾 ALMACENAMIENTO LOCAL SQLITE"
-            android:textSize="13sp"
+            android:text="◈ DIARIO DEL CAZADOR • ALMACENAMIENTO SQLITE"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
+            android:fontFamily="serif"
+            android:letterSpacing="0.14"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
             android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/card_border"
-            app:strokeWidth="1dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="16dp"
             android:layout_marginBottom="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:text="Consulta las inscripciones de telemetría preservadas en la roca local de este dispositivo mediante SQLite."
+                android:textSize="11sp"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_text_lore"
+                android:textStyle="italic"
+                android:layout_marginBottom="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Consulta las lecturas de telemetría guardadas históricamente en la base de datos local del dispositivo."
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="12dp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpenHistory"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="TABLILLA DE MEDICIONES HISTÓRICAS"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_accent_geo_glow"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_soul_button" />
 
-                <Button
-                    android:id="@+id/btnOpenHistory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="📊 VER HISTORIAL DE MEDICIONES SQLITE"
-                    android:backgroundTint="@color/greenhouse_primary_dark"
-                    android:textColor="@color/white" />
+        </LinearLayout>
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- SECCIÓN 4: PASO DE DATOS ENTRE ACTIVITIES (CLASE 02) -->
+        <!-- SECCIÓN 4: PASO DE DATOS ENTRE ACTIVIDADES (CLASE 02) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🔁 PRUEBA DE INTENTS (CLASE 02)"
-            android:textSize="13sp"
+            android:text="◈ TRANSMISIÓN DE SELLOS (INTENTS CLASE 02)"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
+            android:fontFamily="serif"
+            android:letterSpacing="0.14"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
             android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/card_border"
-            app:strokeWidth="1dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="16dp"
             android:layout_marginBottom="24dp">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:hint="Inscripción o ID para DetalleActivity"
+                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:hintTextColor="@color/hk_text_mask"
+                android:textColorHint="@color/hk_border_pale_ore"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputTexto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escribe un mensaje o ID para DetalleActivity"
-                    android:inputType="text"
-                    android:layout_marginBottom="10dp" />
+                    android:textColor="@color/hk_text_soul"
+                    android:fontFamily="serif"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <Button
-                    android:id="@+id/btnEnviar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Enviar a DetalleActivity"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/greenhouse_primary_dark"
-                    app:strokeColor="@color/greenhouse_primary_dark" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEnviar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="TRANSMITIR A DETALLEACTIVITY"
+                android:fontFamily="serif"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:textColor="@color/hk_text_mask"
+                android:textSize="11sp"
+                android:background="@drawable/bg_secondary_button" />
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

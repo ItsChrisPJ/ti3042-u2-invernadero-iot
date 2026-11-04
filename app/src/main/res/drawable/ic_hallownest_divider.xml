@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="16dp"
+    android:viewportWidth="280"
+    android:viewportHeight="16">
+
+    <!-- Línea Izquierda que se adelgaza hacia el extremo -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#6E7891"
+        android:strokeWidth="1"
+        android:pathData="M10,8 L130,8" />
+
+    <!-- Rombo Central de Mineral Pálido -->
+    <path
+        android:fillColor="#161B29"
+        android:strokeColor="#F4F6F9"
+        android:strokeWidth="1.2"
+        android:pathData="M140,2 L146,8 L140,14 L134,8 Z" />
+
+    <!-- Punto interno del rombo -->
+    <path
+        android:fillColor="#F4F6F9"
+        android:pathData="M140,6 L142,8 L140,10 L138,8 Z" />
+
+    <!-- Línea Derecha que se adelgaza hacia el extremo -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#6E7891"
+        android:strokeWidth="1"
+        android:pathData="M150,8 L270,8" />
+</vector>

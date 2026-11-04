@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Silueta del Casco/Máscara del Caballero con cuernos curvos -->
+    <path
+        android:fillColor="#F4F6F9"
+        android:pathData="M24,4 C19,4 16,11 15,16 C14,14 11,8 7,9 C5,10 6,15 9,19 C10,21 11,23 11,27 C11,36 17,44 24,44 C31,44 37,36 37,27 C37,23 38,21 39,19 C42,15 43,10 41,9 C37,8 34,14 33,16 C32,11 29,4 24,4 Z" />
+
+    <!-- Cuencas oculares oscuras del Vacío -->
+    <!-- Ojo Izquierdo -->
+    <path
+        android:fillColor="#07080C"
+        android:pathData="M18,25 C16,25 15,28 16,32 C17,35 19,35 20,32 C21,29 20,25 18,25 Z" />
+
+    <!-- Ojo Derecho -->
+    <path
+        android:fillColor="#07080C"
+        android:pathData="M30,25 C32,25 33,28 32,32 C31,35 29,35 28,32 C27,29 28,25 30,25 Z" />
+</vector>

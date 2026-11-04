@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_bg"
+    android:background="@drawable/bg_void_vignette"
     tools:context=".ui.DetalleActivity">
 
     <LinearLayout
@@ -15,61 +15,93 @@
         android:padding="24dp"
         android:gravity="center">
 
+        <!-- Icono de Máscara de Vasija -->
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_vessel_mask"
+            android:contentDescription="Máscara"
+            android:layout_marginBottom="12dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DetalleActivity (Clase 02)"
-            android:textSize="22sp"
+            android:text="TABLILLA DE SELLOS"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/greenhouse_primary_dark"
-            android:layout_marginBottom="8dp" />
+            android:fontFamily="serif"
+            android:letterSpacing="0.16"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Verificación de Paso de Parámetros mediante Intent con Extra"
-            android:textSize="12sp"
-            android:textColor="@color/text_secondary"
+            android:text="TRANSMISIÓN DE DATOS MEDIANTE INTENT • CLASE 02"
+            android:textSize="11sp"
+            android:fontFamily="serif"
+            android:letterSpacing="0.08"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_mask"
+            android:textStyle="italic"
             android:textAlignment="center"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="16dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <!-- Divisor Ornamental Hallownest -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_hallownest_divider"
+            android:contentDescription="Divisor" />
+
+        <!-- Contenedor del Mensaje Recibido (Tablilla de Piedra de Hallownest) -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/greenhouse_primary"
-            app:strokeWidth="1dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hallownest_card"
+            android:padding="24dp"
+            android:gravity="center"
             android:layout_marginBottom="24dp">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSCRIPCIÓN RECIBIDA:"
+                android:textSize="10sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/txtDetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
+                android:text="El texto transmitido aparecerá aquí"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/hk_accent_lifeblood_glow"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtDetalle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="El texto recibido aparecerá aquí"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:textAlignment="center" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Botón para regresar a MainActivity -->
-        <Button
+        <!-- Botón para regresar a MainActivity: Soul Button -->
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnVolver"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Volver al Menú Principal"
-            android:backgroundTint="@color/greenhouse_primary"
-            android:textColor="@color/white" />
+            android:layout_height="48dp"
+            android:text="REGRESAR AL MENÚ PRINCIPAL"
+            android:fontFamily="serif"
+            android:letterSpacing="0.14"
+            android:textAllCaps="true"
+            android:textColor="@color/hk_text_soul"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_soul_button" />
 
     </LinearLayout>
 
