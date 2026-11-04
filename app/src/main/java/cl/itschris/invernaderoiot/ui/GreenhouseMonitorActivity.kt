@@ -126,6 +126,9 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
             binding.tvMonitorFanStatus.text = "INACTIVO (APAGADO)"
             binding.tvMonitorFanStatus.setTextColor(ContextCompat.getColor(this, R.color.fan_inactive))
         }
+        if (binding.switchMonitorFan.isChecked != t.fanStatus) {
+            binding.switchMonitorFan.isChecked = t.fanStatus
+        }
     }
 
     private fun setupListeners() {
@@ -167,6 +170,14 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
                 }
 
                 socketClient?.connect(host, port)
+            }
+        }
+
+        // Control remoto mediante Switch (Criterio 2.1.1.2)
+        binding.switchMonitorFan.setOnCheckedChangeListener { _, isChecked ->
+            if (socketClient?.isConnected == true) {
+                val cmd = if (isChecked) "CMD:FAN_ON" else "CMD:FAN_OFF"
+                socketClient?.sendCommand(cmd)
             }
         }
 

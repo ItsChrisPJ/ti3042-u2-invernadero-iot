@@ -140,6 +140,20 @@ class GreenhouseNodeActivity : AppCompatActivity() {
             appendConsoleLog("Simulación: Clima óptimo restaurado (22.0°C)")
             updateUI()
         }
+
+        // Slider de temperatura (Criterio 2.1.1.2)
+        binding.sliderNodeTemp.addOnChangeListener { _, value, fromUser ->
+            if (fromUser) {
+                GreenhouseServerManager.currentTemp = value.toDouble()
+                updateUI()
+            }
+        }
+
+        // Switch de ventilador (Criterio 2.1.1.2)
+        binding.switchNodeFan.setOnCheckedChangeListener { _, isChecked ->
+            GreenhouseServerManager.isFanOn = isChecked
+            updateUI()
+        }
     }
 
     private fun updateUI() {
@@ -150,6 +164,15 @@ class GreenhouseNodeActivity : AppCompatActivity() {
 
         binding.tvNodeTemp.text = "${String.format("%.1f", temp)} °C"
         binding.tvNodeHumidity.text = "${String.format("%.1f", hum)} %"
+
+        // Actualizar Slider y Switch sin disparar bucles
+        val clamped = temp.coerceIn(15.0, 45.0).toFloat()
+        if (Math.abs(binding.sliderNodeTemp.value - clamped) > 0.4f) {
+            binding.sliderNodeTemp.value = clamped
+        }
+        if (binding.switchNodeFan.isChecked != fan) {
+            binding.switchNodeFan.isChecked = fan
+        }
 
         // Color temperatura
         val tempColor = when {

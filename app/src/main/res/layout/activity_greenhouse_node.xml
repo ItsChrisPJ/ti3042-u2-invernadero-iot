@@ -307,6 +307,32 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- Slider de Calibración de Temperatura (Criterio 2.1.1.2) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALIBRACIÓN POR SLIDER (15°C - 45°C):"
+                android:textSize="10sp"
+                android:fontFamily="serif"
+                android:letterSpacing="0.08"
+                android:textStyle="bold"
+                android:textColor="@color/hk_text_mask"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="2dp" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderNodeTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="15.0"
+                android:valueTo="45.0"
+                android:stepSize="0.5"
+                android:value="24.5"
+                app:thumbColor="@color/hk_text_soul"
+                app:trackColorActive="@color/hk_accent_lifeblood_glow"
+                app:trackColorInactive="@color/hk_border_stone"
+                android:layout_marginBottom="10dp" />
+
             <!-- Botones de Escenarios Rápidos -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -362,6 +388,18 @@
                 android:textAllCaps="true"
                 android:textColor="@color/hk_text_soul"
                 android:layout_marginBottom="8dp" />
+
+            <!-- Switch Material Actuador (Criterio 2.1.1.2) -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchNodeFan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INTERRUPTOR ACTUADOR (SWITCH ON/OFF)"
+                android:fontFamily="serif"
+                android:letterSpacing="0.06"
+                android:textColor="@color/hk_text_soul"
+                android:textSize="11sp"
+                android:layout_marginBottom="6dp" />
 
             <!-- Estado del Ventilador -->
             <TextView

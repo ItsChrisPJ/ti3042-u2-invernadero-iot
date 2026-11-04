@@ -337,6 +337,18 @@
                 android:textColor="@color/hk_text_soul"
                 android:layout_marginBottom="10dp" />
 
+            <!-- Switch Material Remoto (Criterio 2.1.1.2) -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchMonitorFan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INTERRUPTOR REMOTO VENTILADOR (SWITCH)"
+                android:fontFamily="serif"
+                android:letterSpacing="0.06"
+                android:textColor="@color/hk_text_soul"
+                android:textSize="11sp"
+                android:layout_marginBottom="8dp" />
+
             <!-- Botones de Acción Inalámbrica -->
             <LinearLayout
                 android:layout_width="match_parent"
