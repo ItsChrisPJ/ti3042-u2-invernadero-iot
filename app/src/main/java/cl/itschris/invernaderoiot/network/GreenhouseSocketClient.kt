@@ -42,8 +42,10 @@ class GreenhouseSocketClient(
         clientJob = scope.launch {
             try {
                 onLogMessage("Conectando inalámbricamente a $host:$port...")
+                onConnectionStateChange(false, "Conectando a $host:$port...")
+
                 val newSocket = Socket()
-                newSocket.connect(InetSocketAddress(host, port), 5000)
+                newSocket.connect(InetSocketAddress(host, port), 6000)
 
                 socket = newSocket
                 writer = PrintWriter(newSocket.getOutputStream(), true)
@@ -63,9 +65,19 @@ class GreenhouseSocketClient(
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error de conexión socket: ${e.message}")
-                onLogMessage("Error de conexión: ${e.message}")
+                val errMsg = when {
+                    e.message?.contains("ECONNREFUSED", ignoreCase = true) == true -> "Conexión rechazada (¿iniciaste el Disp 1 en $host?)"
+                    e.message?.contains("ETIMEDOUT", ignoreCase = true) == true -> "Tiempo agotado (¿ambos en el mismo Wi-Fi?)"
+                    e.message?.contains("ENETUNREACH", ignoreCase = true) == true -> "Red inalcanzable"
+                    else -> e.localizedMessage ?: "Error de conexión"
+                }
+                onLogMessage("Error: $errMsg")
+                disconnect("No conectado: $errMsg")
+                return@launch
             } finally {
-                disconnect()
+                if (isConnected) {
+                    disconnect("Desconectado por el servidor")
+                }
             }
         }
     }
@@ -87,8 +99,7 @@ class GreenhouseSocketClient(
         }
     }
 
-    fun disconnect() {
-        if (!isConnected && socket == null) return
+    fun disconnect(reason: String = "Desconectado") {
         isConnected = false
         try {
             writer?.close()
@@ -99,7 +110,7 @@ class GreenhouseSocketClient(
             Log.e(TAG, "Error cerrando socket cliente: ${e.message}")
         }
         clientJob?.cancel()
-        onConnectionStateChange(false, "Desconectado")
-        onLogMessage("Desconectado del Nodo Invernadero")
+        onConnectionStateChange(false, reason)
+        onLogMessage("Estado: $reason")
     }
 }

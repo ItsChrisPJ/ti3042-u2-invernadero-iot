@@ -74,17 +74,16 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
         socketClient = GreenhouseSocketClient(
             onConnectionStateChange = { connected, msg ->
                 runOnUiThread {
+                    binding.tvConnectionStatus.text = "Estado: $msg"
                     if (connected) {
-                        binding.tvConnectionStatus.text = "Estado: $msg"
-                        binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.status_connected))
-                        binding.btnToggleConnection.text = "Desconectar del Invernadero"
-                        binding.btnToggleConnection.setBackgroundColor(ContextCompat.getColor(this, R.color.temp_hot))
+                        binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_accent_greenpath))
+                        binding.btnToggleConnection.text = "DESCONECTAR DEL INVERNADERO"
+                        binding.btnToggleConnection.setBackgroundResource(R.drawable.bg_secondary_button)
                         Toast.makeText(this, "¡Conectado exitosamente!", Toast.LENGTH_SHORT).show()
                     } else {
-                        binding.tvConnectionStatus.text = "Estado: $msg"
-                        binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.status_disconnected))
-                        binding.btnToggleConnection.text = "Conectar al Invernadero"
-                        binding.btnToggleConnection.setBackgroundColor(ContextCompat.getColor(this, R.color.temp_cold))
+                        binding.tvConnectionStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_accent_grimm))
+                        binding.btnToggleConnection.text = "FORJAR VÍNCULO CON INVERNADERO"
+                        binding.btnToggleConnection.setBackgroundResource(R.drawable.bg_soul_button)
                     }
                 }
             },
@@ -143,22 +142,31 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
         // Conectar / Desconectar
         binding.btnToggleConnection.setOnClickListener {
             if (socketClient?.isConnected == true) {
-                socketClient?.disconnect()
+                socketClient?.disconnect("Desconectado por el usuario")
             } else {
-                val ip = binding.etIpAddress.text.toString().trim()
-                if (ip.isEmpty()) {
+                val rawInput = binding.etIpAddress.text.toString().trim()
+                if (rawInput.isEmpty()) {
                     binding.tilIpAddress.error = "Ingresa la IP del Nodo Invernadero"
                     return@setOnClickListener
                 } else {
                     binding.tilIpAddress.error = null
                 }
 
-                // Autoinicio de servidor en loopback si está probando en el mismo equipo
-                if ((ip == "127.0.0.1" || ip == "localhost") && !GreenhouseServerManager.isServerRunning()) {
-                    GreenhouseServerManager.startServer(8080)
+                // Extraer host y puerto en caso de que el usuario haya escrito "IP:8080"
+                var host = rawInput
+                var port = 8080
+                if (host.contains(":")) {
+                    val parts = host.split(":")
+                    host = parts[0].trim()
+                    parts.getOrNull(1)?.trim()?.toIntOrNull()?.let { port = it }
                 }
 
-                socketClient?.connect(ip, 8080)
+                // Autoinicio de servidor en loopback si está probando en el mismo equipo
+                if ((host == "127.0.0.1" || host == "localhost") && !GreenhouseServerManager.isServerRunning()) {
+                    GreenhouseServerManager.startServer(port)
+                }
+
+                socketClient?.connect(host, port)
             }
         }
 
