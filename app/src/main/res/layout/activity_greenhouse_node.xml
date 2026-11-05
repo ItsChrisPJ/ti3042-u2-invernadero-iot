@@ -14,14 +14,14 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Encabezado Estilo Hallownest -->
+        <!-- Encabezado Minimalista -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="18dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -36,7 +36,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:fontFamily="serif"
-                    android:letterSpacing="0.14"
+                    android:letterSpacing="0.06"
                     android:textAllCaps="true"
                     android:textColor="@color/hk_text_soul" />
 
@@ -45,33 +45,19 @@
                     android:layout_height="wrap_content"
                     android:text="DISPOSITIVO 1 • SERVIDOR SOCKET Y SENSORES"
                     android:textSize="10sp"
-                    android:fontFamily="serif"
-                    android:letterSpacing="0.08"
-                    android:textAllCaps="true"
-                    android:textColor="@color/hk_text_mask"
-                    android:textStyle="italic" />
+                    android:textColor="@color/hk_text_mask" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="34dp"
                 android:text="VOLVER"
-                android:fontFamily="serif"
-                android:letterSpacing="0.10"
                 android:textColor="@color/hk_text_mask"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:background="@drawable/bg_secondary_button"
                 android:paddingHorizontal="14dp" />
         </LinearLayout>
-
-        <!-- Divisor Ornamental Hallownest -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_marginBottom="14dp"
-            android:src="@drawable/ic_hallownest_divider"
-            android:contentDescription="Divisor" />
 
         <!-- TARJETA 1: SERVIDOR INALÁMBRICO (SOCKETS TCP) -->
         <LinearLayout
@@ -85,27 +71,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="◈ TRANSMISOR DE ALMA LOCAL (SOCKET TCP)"
-                android:textSize="12sp"
+                android:text="SERVIDOR SOCKET TCP (PUERTO 8080)"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
+                android:letterSpacing="0.06"
                 android:textAllCaps="true"
                 android:textColor="@color/hk_text_soul"
-                android:layout_marginBottom="6dp" />
+                android:layout_marginBottom="4dp" />
 
             <TextView
                 android:id="@+id/tvServerStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Estado: Iniciando servidor..."
-                android:textSize="12sp"
-                android:fontFamily="serif"
+                android:textSize="11sp"
                 android:textColor="@color/hk_accent_greenpath"
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Muesca de IP del Nodo -->
+            <!-- Inset de IP del Nodo -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,8 +104,6 @@
                     android:layout_height="wrap_content"
                     android:text="DIRECCIÓN DEL NODO:"
                     android:textStyle="bold"
-                    android:fontFamily="serif"
-                    android:letterSpacing="0.08"
                     android:textColor="@color/hk_text_mask"
                     android:textSize="11sp"
                     android:layout_marginEnd="8dp" />
@@ -134,27 +116,23 @@
                     android:text="192.168.1.100:8080"
                     android:textStyle="bold"
                     android:fontFamily="monospace"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textColor="@color/hk_accent_lifeblood_glow" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ingresa esta IP en el Dispositivo 2 (Panel Agricultor) para forjar la conexión."
+                android:text="Ingresa esta IP en el Dispositivo 2 (Panel Agricultor) para conectar."
                 android:textSize="10sp"
-                android:fontFamily="serif"
                 android:textColor="@color/hk_text_lore"
-                android:textStyle="italic"
                 android:layout_marginBottom="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnToggleServer"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="38dp"
                 android:text="REINICIAR SERVIDOR"
-                android:fontFamily="serif"
-                android:letterSpacing="0.10"
                 android:textColor="@color/hk_text_mask"
                 android:textSize="11sp"
                 android:background="@drawable/bg_secondary_button" />
@@ -173,16 +151,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="◈ SENSOR DHT11 • TELEMETRÍA SUBTERRÁNEA"
-                android:textSize="12sp"
+                android:text="SENSOR DHT11 • TELEMETRÍA EN VIVO"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
+                android:letterSpacing="0.06"
                 android:textAllCaps="true"
                 android:textColor="@color/hk_text_soul"
                 android:layout_marginBottom="12dp" />
 
-            <!-- Display Temperatura y Humedad en Pozos de Piedra -->
+            <!-- Display Temperatura y Humedad -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,7 +167,7 @@
                 android:baselineAligned="false"
                 android:layout_marginBottom="12dp">
 
-                <!-- Pozo Temperatura -->
+                <!-- Inset Temperatura -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -206,8 +183,7 @@
                         android:layout_height="wrap_content"
                         android:text="TEMPERATURA"
                         android:textSize="10sp"
-                        android:fontFamily="serif"
-                        android:letterSpacing="0.10"
+                        android:letterSpacing="0.06"
                         android:textStyle="bold"
                         android:textColor="@color/hk_text_mask" />
 
@@ -218,7 +194,6 @@
                         android:text="24.5 °C"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:fontFamily="serif"
                         android:textColor="@color/hk_accent_greenpath"
                         android:layout_marginVertical="4dp" />
 
@@ -229,8 +204,8 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnTempMinus"
-                            android:layout_width="40dp"
-                            android:layout_height="36dp"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
                             android:text="-"
                             android:textColor="@color/hk_text_soul"
                             android:textSize="16sp"
@@ -239,8 +214,8 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnTempPlus"
-                            android:layout_width="40dp"
-                            android:layout_height="36dp"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
                             android:text="+"
                             android:textColor="@color/hk_text_soul"
                             android:textSize="16sp"
@@ -248,7 +223,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Pozo Humedad -->
+                <!-- Inset Humedad -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -262,10 +237,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HUMEDAD SAVIA"
+                        android:text="HUMEDAD RELATIVA"
                         android:textSize="10sp"
-                        android:fontFamily="serif"
-                        android:letterSpacing="0.10"
+                        android:letterSpacing="0.06"
                         android:textStyle="bold"
                         android:textColor="@color/hk_text_mask" />
 
@@ -276,7 +250,6 @@
                         android:text="62.0 %"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:fontFamily="serif"
                         android:textColor="@color/hk_accent_lifeblood_glow"
                         android:layout_marginVertical="4dp" />
 
@@ -287,8 +260,8 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnHumMinus"
-                            android:layout_width="40dp"
-                            android:layout_height="36dp"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
                             android:text="-"
                             android:textColor="@color/hk_text_soul"
                             android:textSize="16sp"
@@ -297,8 +270,8 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnHumPlus"
-                            android:layout_width="40dp"
-                            android:layout_height="36dp"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
                             android:text="+"
                             android:textColor="@color/hk_text_soul"
                             android:textSize="16sp"
@@ -313,11 +286,10 @@
                 android:layout_height="wrap_content"
                 android:text="CALIBRACIÓN POR SLIDER (15°C - 45°C):"
                 android:textSize="10sp"
-                android:fontFamily="serif"
-                android:letterSpacing="0.08"
+                android:letterSpacing="0.06"
                 android:textStyle="bold"
                 android:textColor="@color/hk_text_mask"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginBottom="2dp" />
 
             <com.google.android.material.slider.Slider
@@ -344,11 +316,9 @@
                     android:layout_width="0dp"
                     android:layout_height="38dp"
                     android:layout_weight="1"
-                    android:text="✦ INFECCIÓN (32°C)"
-                    android:fontFamily="serif"
-                    android:letterSpacing="0.08"
+                    android:text="Simular Calor (32°C)"
                     android:textColor="@color/hk_accent_infection"
-                    android:textSize="10sp"
+                    android:textSize="11sp"
                     android:background="@drawable/bg_secondary_button"
                     android:layout_marginEnd="4dp" />
 
@@ -357,11 +327,9 @@
                     android:layout_width="0dp"
                     android:layout_height="38dp"
                     android:layout_weight="1"
-                    android:text="🌿 SENDERO VERDE (22°C)"
-                    android:fontFamily="serif"
-                    android:letterSpacing="0.08"
+                    android:text="Simular Óptimo (22°C)"
                     android:textColor="@color/hk_accent_greenpath"
-                    android:textSize="10sp"
+                    android:textSize="11sp"
                     android:background="@drawable/bg_secondary_button"
                     android:layout_marginStart="4dp" />
             </LinearLayout>
@@ -380,11 +348,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="◈ ACTUADOR • CORRIENTE DE AIRE"
-                android:textSize="12sp"
+                android:text="ACTUADOR • VENTILADOR DE REFRIGERACIÓN"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
+                android:letterSpacing="0.06"
                 android:textAllCaps="true"
                 android:textColor="@color/hk_text_soul"
                 android:layout_marginBottom="8dp" />
@@ -394,12 +361,10 @@
                 android:id="@+id/switchNodeFan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="INTERRUPTOR ACTUADOR (SWITCH ON/OFF)"
-                android:fontFamily="serif"
-                android:letterSpacing="0.06"
+                android:text="Interruptor del Ventilador (Switch On/Off)"
                 android:textColor="@color/hk_text_soul"
-                android:textSize="11sp"
-                android:layout_marginBottom="6dp" />
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
 
             <!-- Estado del Ventilador -->
             <TextView
@@ -407,26 +372,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="VENTILADOR: EN REPOSO"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
+                android:letterSpacing="0.06"
                 android:textAllCaps="true"
                 android:textColor="@color/hk_text_soul"
                 android:background="@drawable/bg_charm_well"
                 android:gravity="center"
-                android:paddingVertical="12dp"
+                android:paddingVertical="10dp"
                 android:layout_marginBottom="8dp" />
 
             <TextView
                 android:id="@+id/tvNodeMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modo: AUTOMÁTICO (Enfriamiento activo si T > 28°C)"
+                android:text="Modo: AUTOMÁTICO (Enciende ventilador si T > 28°C)"
                 android:textSize="11sp"
-                android:fontFamily="serif"
-                android:textColor="@color/hk_text_lore"
-                android:textStyle="italic" />
+                android:textColor="@color/hk_text_lore" />
 
         </LinearLayout>
 
@@ -442,12 +404,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TABLILLA DE TRANSMISIONES EN VIVO (LOG)"
+                android:text="CONSOLA DE TRANSMISIONES (LOG)"
                 android:textColor="@color/hk_text_mask"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.10"
-                android:textSize="11sp"
+                android:letterSpacing="0.06"
+                android:textSize="10sp"
                 android:layout_marginBottom="6dp" />
 
             <TextView

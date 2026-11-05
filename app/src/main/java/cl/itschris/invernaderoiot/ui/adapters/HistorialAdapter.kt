@@ -31,8 +31,8 @@ class HistorialAdapter(
 
         holder.binding.tvItemTimestamp.text = item.timestamp
         holder.binding.tvItemMode.text = item.mode.uppercase()
-        holder.binding.tvItemTemp.text = "🌡️ ${String.format("%.1f", item.temperature)} °C"
-        holder.binding.tvItemHumidity.text = "💧 ${String.format("%.1f", item.humidity)} %"
+        holder.binding.tvItemTemp.text = "${String.format("%.1f", item.temperature)} °C"
+        holder.binding.tvItemHumidity.text = "${String.format("%.1f", item.humidity)} %"
 
         // Color dinámico según la temperatura
         val tempColor = when {
@@ -42,16 +42,18 @@ class HistorialAdapter(
         }
         holder.binding.tvItemTemp.setTextColor(tempColor)
 
-        // Estado del ventilador
+        // Estado del ventilador con badge redondeado
         if (item.fanStatus) {
             holder.binding.tvItemFanStatus.text = "VENTILADOR ON"
-            holder.binding.tvItemFanStatus.setBackgroundColor(
-                ContextCompat.getColor(context, R.color.fan_active)
+            holder.binding.tvItemFanStatus.setBackgroundResource(R.drawable.bg_fan_active)
+            holder.binding.tvItemFanStatus.setTextColor(
+                ContextCompat.getColor(context, R.color.hk_accent_lifeblood_glow)
             )
         } else {
             holder.binding.tvItemFanStatus.text = "VENTILADOR OFF"
-            holder.binding.tvItemFanStatus.setBackgroundColor(
-                ContextCompat.getColor(context, R.color.fan_inactive)
+            holder.binding.tvItemFanStatus.setBackgroundResource(R.drawable.bg_fan_inactive)
+            holder.binding.tvItemFanStatus.setTextColor(
+                ContextCompat.getColor(context, R.color.hk_text_lore)
             )
         }
     }

@@ -17,8 +17,8 @@
 
         <!-- Icono de Máscara de Vasija -->
         <ImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_vessel_mask"
             android:contentDescription="Máscara"
             android:layout_marginBottom="12dp" />
@@ -26,37 +26,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TABLILLA DE SELLOS"
-            android:textSize="20sp"
+            android:text="DETALLE DE INTENT"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="serif"
-            android:letterSpacing="0.16"
+            android:letterSpacing="0.08"
             android:textAllCaps="true"
             android:textColor="@color/hk_text_soul"
-            android:layout_marginBottom="6dp" />
+            android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TRANSMISIÓN DE DATOS MEDIANTE INTENT • CLASE 02"
-            android:textSize="11sp"
-            android:fontFamily="serif"
-            android:letterSpacing="0.08"
-            android:textAllCaps="true"
+            android:text="TRANSMISIÓN DE DATOS ENTRE ACTIVIDADES • CLASE 02"
+            android:textSize="10sp"
+            android:letterSpacing="0.06"
             android:textColor="@color/hk_text_mask"
-            android:textStyle="italic"
             android:textAlignment="center"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="24dp" />
 
-        <!-- Divisor Ornamental Hallownest -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/ic_hallownest_divider"
-            android:contentDescription="Divisor" />
-
-        <!-- Contenedor del Mensaje Recibido (Tablilla de Piedra de Hallownest) -->
+        <!-- Contenedor del Mensaje Recibido -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,10 +58,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="INSCRIPCIÓN RECIBIDA:"
+                android:text="PARÁMETRO RECIBIDO:"
                 android:textSize="10sp"
-                android:fontFamily="serif"
-                android:letterSpacing="0.10"
+                android:letterSpacing="0.06"
                 android:textStyle="bold"
                 android:textColor="@color/hk_text_mask"
                 android:layout_marginBottom="12dp" />
@@ -82,22 +70,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="El texto transmitido aparecerá aquí"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
                 android:textColor="@color/hk_accent_lifeblood_glow"
                 android:textAlignment="center" />
         </LinearLayout>
 
-        <!-- Botón para regresar a MainActivity: Soul Button -->
+        <!-- Botón para regresar a MainActivity -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnVolver"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="46dp"
             android:text="REGRESAR AL MENÚ PRINCIPAL"
-            android:fontFamily="serif"
-            android:letterSpacing="0.14"
-            android:textAllCaps="true"
+            android:letterSpacing="0.06"
             android:textColor="@color/hk_text_soul"
             android:textSize="12sp"
             android:textStyle="bold"

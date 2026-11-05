@@ -17,22 +17,22 @@
 
         <!-- Emblema Superior: Máscara de la Vasija -->
         <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/ic_vessel_mask"
-            android:contentDescription="Máscara de Vasija Hallownest" />
+            android:contentDescription="Máscara de Vasija" />
 
-        <!-- Título Estilo Entrada a Zona de Hallownest -->
+        <!-- Título Minimalista -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/app_name"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:fontFamily="serif"
-            android:letterSpacing="0.18"
+            android:letterSpacing="0.08"
             android:textAllCaps="true"
             android:textColor="@color/hk_text_soul" />
 
@@ -40,24 +40,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="SISTEMA DE CONTROL SUBTERRÁNEO • TI3042"
+            android:text="MONITOREO &amp; CONTROL INALÁMBRICO • TI3042"
             android:textSize="11sp"
-            android:fontFamily="serif"
-            android:letterSpacing="0.12"
-            android:textAllCaps="true"
+            android:letterSpacing="0.06"
             android:textColor="@color/hk_text_mask"
-            android:textStyle="italic" />
+            android:layout_marginBottom="24dp" />
 
-        <!-- Divisor Ornamental Hallownest -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_hallownest_divider"
-            android:contentDescription="Divisor de Hallownest" />
-
-        <!-- Tablilla de Acceso (Tarjeta con marco de doble línea) -->
+        <!-- Tarjeta de Acceso Minimalista -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,12 +58,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TABLILLA DE ACCESO"
-                android:textSize="14sp"
+                android:text="INICIAR SESIÓN"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:fontFamily="serif"
-                android:letterSpacing="0.16"
-                android:textAllCaps="true"
+                android:letterSpacing="0.08"
                 android:textColor="@color/hk_text_soul"
                 android:layout_marginBottom="16dp" />
 
@@ -84,9 +71,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_username"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="14dp">
 
@@ -95,7 +86,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPersonName"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -108,9 +98,13 @@
                 android:hint="@string/hint_password"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/hk_text_mask"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="20dp">
 
@@ -119,57 +113,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Botón Primario: Soul Button -->
+            <!-- Botón Primario: Iniciar Sesión -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="ENFOCAR ALMA • ENTRAR"
-                android:fontFamily="serif"
-                android:letterSpacing="0.15"
-                android:textAllCaps="true"
+                android:text="INGRESAR A LA PLATAFORMA"
+                android:letterSpacing="0.06"
                 android:textColor="@color/hk_text_soul"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:background="@drawable/bg_soul_button"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="10dp" />
 
             <!-- Botón Secundario: Credenciales Demo -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnQuickDemo"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:text="USAR AMULETO DEMO (ADMIN)"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
-                android:textAllCaps="true"
+                android:text="CARGAR CREDENCIALES DEMO (ADMIN)"
+                android:letterSpacing="0.05"
                 android:textColor="@color/hk_text_mask"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:background="@drawable/bg_secondary_button"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="14dp" />
 
-            <!-- Enlace Inscripción -->
+            <!-- Enlace Registro -->
             <TextView
                 android:id="@+id/tvGoRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="‹ INSCRIBIR NUEVO VIAJERO ›"
+                android:text="¿No tienes cuenta? Regístrate aquí"
                 android:textColor="@color/hk_accent_lifeblood_glow"
-                android:fontFamily="serif"
-                android:letterSpacing="0.14"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                android:padding="8dp"
+                android:padding="6dp"
                 android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 
-        <!-- Sello de Seguridad Criptográfico ISO/IEC 27400 -->
+        <!-- Sello de Seguridad ISO/IEC 27400 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -186,8 +172,8 @@
                 android:layout_marginBottom="6dp">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
                     android:src="@drawable/ic_charm_notch"
                     app:tint="@color/hk_accent_lifeblood_glow"
                     android:contentDescription="Sello"
@@ -196,10 +182,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SELLO DE VINCULACIÓN (ISO/IEC 27400)"
-                    android:fontFamily="serif"
-                    android:letterSpacing="0.12"
-                    android:textAllCaps="true"
+                    android:text="SEGURIDAD CRIPTOGRÁFICA (ISO/IEC 27400)"
+                    android:letterSpacing="0.06"
                     android:textStyle="bold"
                     android:textColor="@color/hk_accent_lifeblood_glow"
                     android:textSize="11sp" />
@@ -208,10 +192,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Credenciales selladas mediante Hash SHA-256 y Salt criptográfico aleatorio de 16 bytes. Ni una gota de texto plano escapa al Vacío."
-                android:fontFamily="serif"
+                android:text="Credenciales selladas con Hashing SHA-256 y Salt aleatorio de 16 bytes. Autenticación local segura en SQLite sin almacenamiento en texto plano."
                 android:textColor="@color/hk_text_lore"
-                android:textStyle="italic"
                 android:textSize="11sp"
                 android:lineSpacingExtra="2dp" />
         </LinearLayout>

@@ -185,10 +185,12 @@ class GreenhouseNodeActivity : AppCompatActivity() {
         // Estado del ventilador
         if (fan) {
             binding.tvNodeFanStatus.text = "VENTILADOR: ENCENDIDO"
-            binding.tvNodeFanStatus.setBackgroundColor(ContextCompat.getColor(this, R.color.fan_active))
+            binding.tvNodeFanStatus.setBackgroundResource(R.drawable.bg_fan_active)
+            binding.tvNodeFanStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_accent_lifeblood_glow))
         } else {
             binding.tvNodeFanStatus.text = "VENTILADOR: APAGADO"
-            binding.tvNodeFanStatus.setBackgroundColor(ContextCompat.getColor(this, R.color.fan_inactive))
+            binding.tvNodeFanStatus.setBackgroundResource(R.drawable.bg_fan_inactive)
+            binding.tvNodeFanStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_text_mask))
         }
 
         // Modo

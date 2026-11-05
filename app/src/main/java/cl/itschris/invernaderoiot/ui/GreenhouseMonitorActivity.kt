@@ -121,10 +121,10 @@ class GreenhouseMonitorActivity : AppCompatActivity() {
         // Estado del ventilador remoto
         if (t.fanStatus) {
             binding.tvMonitorFanStatus.text = "ACTIVO (ENCENDIDO)"
-            binding.tvMonitorFanStatus.setTextColor(ContextCompat.getColor(this, R.color.fan_active))
+            binding.tvMonitorFanStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_accent_lifeblood_glow))
         } else {
             binding.tvMonitorFanStatus.text = "INACTIVO (APAGADO)"
-            binding.tvMonitorFanStatus.setTextColor(ContextCompat.getColor(this, R.color.fan_inactive))
+            binding.tvMonitorFanStatus.setTextColor(ContextCompat.getColor(this, R.color.hk_text_lore))
         }
         if (binding.switchMonitorFan.isChecked != t.fanStatus) {
             binding.switchMonitorFan.isChecked = t.fanStatus

@@ -17,9 +17,9 @@
 
         <!-- Emblema Superior: Máscara de Vasija -->
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_vessel_mask"
             android:contentDescription="Máscara de Vasija" />
 
@@ -27,11 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="INSCRIPCIÓN DE VIAJERO"
-            android:textSize="20sp"
+            android:text="CREAR CUENTA"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="serif"
-            android:letterSpacing="0.18"
+            android:letterSpacing="0.08"
             android:textAllCaps="true"
             android:textColor="@color/hk_text_soul" />
 
@@ -39,24 +39,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="REGISTRO DE OPERADOR EN EL DIARIO DE HALLOWNEST"
-            android:textSize="11sp"
-            android:fontFamily="serif"
-            android:letterSpacing="0.10"
-            android:textAllCaps="true"
+            android:text="REGISTRO DE OPERADOR EN BASE DE DATOS SQLITE"
+            android:textSize="10sp"
+            android:letterSpacing="0.06"
             android:textColor="@color/hk_text_mask"
-            android:textStyle="italic" />
+            android:layout_marginBottom="24dp" />
 
-        <!-- Divisor Ornamental Hallownest -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/ic_hallownest_divider"
-            android:contentDescription="Divisor de Hallownest" />
-
-        <!-- Tablilla de Registro (Marco Doble Línea) -->
+        <!-- Tarjeta de Registro Minimalista -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,9 +60,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_full_name"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="12dp">
 
@@ -82,7 +75,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,9 +84,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_username"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="12dp">
 
@@ -103,7 +99,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,10 +106,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MUESCA DE ROL EN EL INVERNADERO:"
-                android:textSize="11sp"
-                android:fontFamily="serif"
-                android:letterSpacing="0.10"
+                android:text="ROL DEL USUARIO:"
+                android:textSize="10sp"
+                android:letterSpacing="0.06"
                 android:textStyle="bold"
                 android:textColor="@color/hk_text_mask"
                 android:layout_marginBottom="4dp" />
@@ -125,7 +119,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/bg_charm_well"
                 android:paddingHorizontal="12dp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="14dp" />
 
             <!-- Contraseña -->
             <com.google.android.material.textfield.TextInputLayout
@@ -135,9 +129,13 @@
                 android:hint="@string/hint_password"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/hk_text_mask"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="12dp">
 
@@ -146,7 +144,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -158,9 +155,13 @@
                 android:hint="@string/hint_confirm_password"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/hk_text_mask"
-                app:boxStrokeColor="@color/hk_border_pale_ore"
+                app:boxStrokeColor="@color/hk_accent_lifeblood_glow"
                 app:hintTextColor="@color/hk_text_mask"
-                android:textColorHint="@color/hk_border_pale_ore"
+                android:textColorHint="@color/hk_text_lore"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="20dp">
 
@@ -169,36 +170,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/hk_text_soul"
-                    android:fontFamily="serif"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Botón Registrar: Soul Button -->
+            <!-- Botón Registrar -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="FORJAR VÍNCULO • REGISTRAR"
-                android:fontFamily="serif"
-                android:letterSpacing="0.15"
-                android:textAllCaps="true"
+                android:layout_height="46dp"
+                android:text="REGISTRAR USUARIO"
+                android:letterSpacing="0.06"
                 android:textColor="@color/hk_text_soul"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:background="@drawable/bg_soul_button"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="10dp" />
 
             <!-- Botón Volver -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBackToLogin"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="‹ REGRESAR AL BANCO DE DESCANSO"
-                android:fontFamily="serif"
-                android:letterSpacing="0.12"
-                android:textAllCaps="true"
+                android:layout_height="42dp"
+                android:text="VOLVER AL INICIO DE SESIÓN"
                 android:textColor="@color/hk_text_mask"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:background="@drawable/bg_secondary_button" />
 
         </LinearLayout>

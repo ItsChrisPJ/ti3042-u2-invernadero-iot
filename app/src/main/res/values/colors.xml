@@ -4,74 +4,74 @@
          HOLLOW KNIGHT DESIGN TOKENS (SISTEMA DE DISEÑO HALLOWNEST)
          ======================================================== -->
 
-    <!-- Fondos: El Vacío y las Cavernas Subterráneas -->
-    <color name="hk_bg_void">#07080C</color>             <!-- Negro abisal base -->
-    <color name="hk_bg_cavern">#0E111A</color>           <!-- Superficie de pantalla secundaria -->
-    <color name="hk_surface_card">#161B29</color>        <!-- Crossroads Slate (Fondo tarjetas) -->
-    <color name="hk_surface_card_alpha">#D9161B29</color> <!-- Tarjeta translúcida 85% -->
-    <color name="hk_surface_elevated">#1F263B</color>    <!-- City of Tears Indigo (Modales/Elevados) -->
-    <color name="hk_surface_dark_well">#0A0D14</color>   <!-- Hueco de Muesca de Amuleto -->
+    <!-- Fondos: El Vacío y Superficies Minimalistas -->
+    <color name="hk_bg_void">#090C12</color>             <!-- Negro abisal base -->
+    <color name="hk_bg_cavern">#0E131F</color>           <!-- Superficie de pantalla secundaria -->
+    <color name="hk_surface_card">#121724</color>        <!-- Fondo tarjetas minimalistas -->
+    <color name="hk_surface_card_alpha">#E6121724</color> <!-- Tarjeta translúcida 90% -->
+    <color name="hk_surface_elevated">#1A2234</color>    <!-- Superficie elevada / botones activos -->
+    <color name="hk_surface_dark_well">#0C101A</color>   <!-- Inset / contenedor de métricas -->
 
-    <!-- Textos, Líneas y Filigranas: Alma y Mineral Pálido -->
-    <color name="hk_text_soul">#F4F6F9</color>           <!-- Pure Soul: Blanco luminoso frío -->
-    <color name="hk_text_mask">#C4C9D6</color>           <!-- Ancient Mask: Blanco hueso / tiza envejecida -->
-    <color name="hk_text_lore">#8C95A8</color>           <!-- Citas y Tablillas de historia -->
-    <color name="hk_border_pale_ore">#6E7891</color>     <!-- Mineral Pálido: Plata bruñida / borde interior -->
-    <color name="hk_border_stone">#3A4154</color>        <!-- Piedra de Hallownest: Borde exterior oscuro -->
-    <color name="hk_border_faint">#202636</color>        <!-- Líneas guía tenues -->
+    <!-- Textos y Bordes Delicados (Pale Ore & Mask) -->
+    <color name="hk_text_soul">#F5F7FA</color>           <!-- Pure Soul: Blanco luminoso de alta legibilidad -->
+    <color name="hk_text_mask">#9AA3B5</color>           <!-- Ancient Mask: Gris plata suave -->
+    <color name="hk_text_lore">#6B768C</color>           <!-- Texto secundario y notas técnicas -->
+    <color name="hk_border_pale_ore">#263045</color>     <!-- Borde sutil minimalista (Pale Ore) -->
+    <color name="hk_border_stone">#1C2436</color>        <!-- Borde secundario tenue -->
+    <color name="hk_border_faint">#161D2B</color>        <!-- Líneas divisorias sutiles -->
 
-    <!-- Acentos Semánticos: Biomas y Energías de Hallownest -->
-    <!-- Soul Focus (Acción Primaria / Brillo de Alma) -->
-    <color name="hk_accent_soul_glow">#A5F3FC</color>
-    <color name="hk_accent_soul_halo">#66A5F3FC</color>
+    <!-- Acentos Semánticos -->
+    <!-- Soul Focus -->
+    <color name="hk_accent_soul_glow">#38BDF8</color>
+    <color name="hk_accent_soul_halo">#3338BDF8</color>
 
     <!-- Savia Azul / Lifeblood (Humedad / Info / Conectividad) -->
-    <color name="hk_accent_lifeblood">#00B4D8</color>
-    <color name="hk_accent_lifeblood_glow">#72EFDD</color>
-    <color name="hk_accent_lifeblood_bg">#102A38</color>
+    <color name="hk_accent_lifeblood">#0EA5E9</color>
+    <color name="hk_accent_lifeblood_glow">#38BDF8</color>
+    <color name="hk_accent_lifeblood_bg">#0C2538</color>
 
     <!-- La Infección / Radiance (Alertas Críticas de Calor > 28°C) -->
-    <color name="hk_accent_infection">#FF7B00</color>
-    <color name="hk_accent_infection_glow">#FFB703</color>
-    <color name="hk_accent_infection_bg">#3D1E04</color>
+    <color name="hk_accent_infection">#F97316</color>
+    <color name="hk_accent_infection_glow">#FBBF24</color>
+    <color name="hk_accent_infection_bg">#351703</color>
 
     <!-- Sendero Verde / Greenpath (Clima Óptimo / Éxito / Estado Activo) -->
-    <color name="hk_accent_greenpath">#52B788</color>
-    <color name="hk_accent_greenpath_glow">#74C69D</color>
-    <color name="hk_accent_greenpath_bg">#142B20</color>
+    <color name="hk_accent_greenpath">#22C55E</color>
+    <color name="hk_accent_greenpath_glow">#4ADE80</color>
+    <color name="hk_accent_greenpath_bg">#0D2B18</color>
 
     <!-- Grimm Scarlet (Peligro / Error / Desconexión) -->
-    <color name="hk_accent_grimm">#E63946</color>
-    <color name="hk_accent_grimm_dark">#780000</color>
+    <color name="hk_accent_grimm">#EF4444</color>
+    <color name="hk_accent_grimm_dark">#7F1D1D</color>
 
     <!-- Godhome Geo (Registros / Moneda / Acentos Dorados) -->
-    <color name="hk_accent_geo">#D4AF37</color>
-    <color name="hk_accent_geo_glow">#FCEFB4</color>
+    <color name="hk_accent_geo">#EAB308</color>
+    <color name="hk_accent_geo_glow">#FDE047</color>
 
     <!-- ========================================================
          ALIAS DE COMPATIBILIDAD MAPEOS A HALLOW KNIGHT
          ======================================================== -->
-    <color name="black">#07080C</color>
-    <color name="white">#F4F6F9</color>
+    <color name="black">#090C12</color>
+    <color name="white">#F5F7FA</color>
 
-    <color name="screen_bg">#07080C</color>
-    <color name="card_bg">#161B29</color>
-    <color name="card_border">#3A4154</color>
-    <color name="text_primary">#F4F6F9</color>
-    <color name="text_secondary">#C4C9D6</color>
+    <color name="screen_bg">#090C12</color>
+    <color name="card_bg">#121724</color>
+    <color name="card_border">#263045</color>
+    <color name="text_primary">#F5F7FA</color>
+    <color name="text_secondary">#9AA3B5</color>
 
-    <color name="greenhouse_primary">#F4F6F9</color>
-    <color name="greenhouse_primary_dark">#6E7891</color>
-    <color name="greenhouse_primary_light">#161B29</color>
-    <color name="greenhouse_accent">#00B4D8</color>
+    <color name="greenhouse_primary">#F5F7FA</color>
+    <color name="greenhouse_primary_dark">#6B768C</color>
+    <color name="greenhouse_primary_light">#121724</color>
+    <color name="greenhouse_accent">#38BDF8</color>
 
-    <color name="temp_cold">#00B4D8</color>
-    <color name="temp_optimal">#52B788</color>
-    <color name="temp_hot">#FF7B00</color>
+    <color name="temp_cold">#38BDF8</color>
+    <color name="temp_optimal">#22C55E</color>
+    <color name="temp_hot">#F97316</color>
 
-    <color name="fan_active">#72EFDD</color>
-    <color name="fan_inactive">#3A4154</color>
+    <color name="fan_active">#0E7490</color>
+    <color name="fan_inactive">#1E2536</color>
 
-    <color name="status_connected">#52B788</color>
-    <color name="status_disconnected">#E63946</color>
+    <color name="status_connected">#22C55E</color>
+    <color name="status_disconnected">#EF4444</color>
 </resources>

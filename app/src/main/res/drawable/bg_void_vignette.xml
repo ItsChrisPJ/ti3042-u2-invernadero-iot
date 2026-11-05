@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <!-- Viñeta ambiental: Centro en Deep Cavern y bordes oscuros en Void Black -->
     <gradient
-        android:type="radial"
-        android:gradientRadius="450dp"
-        android:startColor="#0E111A"
-        android:centerColor="#0B0D14"
-        android:endColor="#07080C" />
+        android:type="linear"
+        android:angle="270"
+        android:startColor="#0E121C"
+        android:endColor="#080A0F" />
 </shape>
