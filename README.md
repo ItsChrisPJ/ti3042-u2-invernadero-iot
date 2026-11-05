@@ -5,6 +5,7 @@
 **Docente:** Sebastián  
 **Tema Seleccionado:** Caso 1 - Invernadero Inteligente de Bajo Costo  
 **Tecnologías:** Android Studio | Kotlin | Sockets Inalámbricos (Wi-Fi / Bluetooth) | SQLite Local | Norma ISO 27400  
+**Video Demostrativo:** [Ver en Google Drive](https://drive.google.com/file/d/1g9qJK8O5hva1_jx33Tq-VcfCXMoWXih8/view?usp=drive_link)  
 
 ---
 
